@@ -4,6 +4,7 @@ class_name WeightObject
 var weight:float = 0.5
 var is_dragging := false
 var is_hovering := false
+var draggable := true
 var offset:Vector2
 var starting_pos:Vector2
 var current_zone
@@ -38,7 +39,7 @@ func snap_to_site(site):
 	tween.tween_property(self, "position", site.global_position, 0.3).set_ease(Tween.EASE_OUT)
 	
 func _on_mouse_entered():
-	if not DragManager.is_dragging:
+	if draggable and not DragManager.is_dragging:
 		is_hovering = true
 		if not DragManager.is_weight_selected:
 			scale = Vector2(1.1, 1.1)

@@ -4,10 +4,11 @@ extends Node2D
 @export var animator : AnimationPlayer
 @export var button : Button
 var char_index := 0
+var anubis_sprites = ["res://assets/Anubis1.PNG", "res://assets/Anubis2.PNG"]
 var char_sprites = [["res://assets/IMG_1498.PNG", "res://assets/IMG_1497.PNG"], ["res://assets/IMG_1496.PNG", "res://assets/IMG_1495.PNG"], ["res://assets/IMG_1494.PNG", "res://assets/IMG_1493.PNG"], ["res://assets/IMG_1489.PNG", "res://assets/IMG_1492.PNG"]]
 
 func _ready():
-	pick_rand_character()
+	visual.texture = load(anubis_sprites[0])
 	character_enter(char_index)
 
 func pick_rand_character():
@@ -16,11 +17,13 @@ func pick_rand_character():
 
 func character_enter(character):
 	print(str(character) + " has entered")
-	
 	animator.play("character_enter")
 
 func switch_char_sprite():
 	visual.texture = load(char_sprites[char_index][1])
+
+func switch_anubis_sprite():
+	visual.texture = load(anubis_sprites[1])
 
 func _on_button_pressed():
 	print("pressed")

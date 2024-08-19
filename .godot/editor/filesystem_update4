@@ -1,12 +1,1 @@
-res://scenes/character.tscn
-res://scripts/character.gd
 res://scenes/game.tscn
-res://scenes/scale.tscn
-res://scenes/weight.tscn
-res://scenes/book.tscn
-res://scenes/scroll.tscn
-res://scenes/feather.tscn
-res://scenes/soul.tscn
-res://scripts/burst.gd
-res://scenes/text_box.tscn
-res://scripts/text_box.gd

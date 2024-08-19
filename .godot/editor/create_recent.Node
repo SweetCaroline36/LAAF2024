@@ -1,11 +1,11 @@
-MarginContainer
+RichTextLabel
 PanelContainer
+Control
+Sprite2D
+MarginContainer
 Button
 TextureRect
 VBoxContainer
-Control
-RichTextLabel
-Sprite2D
 AnimationPlayer
 CollisionShape2D
 Area2D

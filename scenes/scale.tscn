@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cgn2ynvs74tn3" path="res://assets/IMG_1505.PNG" id="5_w3ho1"]
 [ext_resource type="PackedScene" uid="uid://s6ro0ev5eici" path="res://scenes/soul.tscn" id="6_8j8o6"]
 [ext_resource type="PackedScene" uid="uid://bn886bl1h6jb1" path="res://scenes/feather.tscn" id="6_idkkm"]
-[ext_resource type="Texture2D" uid="uid://ieiyds5kqk00" path="res://assets/IMG_1503.PNG" id="6_jk84q"]
+[ext_resource type="Texture2D" uid="uid://bqsh00jfritrp" path="res://assets/Scale base.PNG" id="8_5t3ci"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2w5st"]
 size = Vector2(527, 29)
@@ -107,9 +107,9 @@ shape = SubResource("RectangleShape2D_hvw2h")
 position = Vector2(-1.99998, 89.05)
 
 [node name="Base" type="Sprite2D" parent="."]
-position = Vector2(-16, -15.05)
+position = Vector2(35, -15)
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("6_jk84q")
+texture = ExtResource("8_5t3ci")
 region_enabled = true
 region_rect = Rect2(114.767, 14.2204, 1135.45, 1913.94)
 
