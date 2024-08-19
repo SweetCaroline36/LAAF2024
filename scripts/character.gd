@@ -1,4 +1,5 @@
 extends Node2D
+class_name Character
 
 @onready var visual = $Visual
 @export var animator : AnimationPlayer
@@ -9,26 +10,24 @@ var char_sprites = [["res://assets/IMG_1498.PNG", "res://assets/IMG_1497.PNG"], 
 
 func _ready():
 	visual.texture = load(anubis_sprites[0])
-	character_enter(char_index)
+	character_enter()
 
 func pick_rand_character():
 	char_index = randi_range(0,char_sprites.size()-1)
 	visual.texture = load(char_sprites[char_index][0])
 
-func character_enter(character):
-	print(str(character) + " has entered")
+func character_enter():
 	animator.play("character_enter")
 
 func switch_char_sprite():
-	visual.texture = load(char_sprites[char_index][1])
+	if not GameManager.is_tutorial:
+		visual.texture = load(char_sprites[char_index][1])
 
-func switch_anubis_sprite():
-	visual.texture = load(anubis_sprites[1])
+func switch_anubis_sprite(i:int):
+	visual.texture = load(anubis_sprites[i])
 
 func _on_button_pressed():
 	print("pressed")
 	animator.play("scroll_trigger")
 
-func _on_button_mouse_entered():
-	pass
 	#button.scale += Vector2(1.1, 1.1) effect here

@@ -24,7 +24,7 @@ var tutorial_text = [
 	["Give it a shot. (Drag the weight onto the left scale)", "disable_button"],
 	["If you judge that their soul outweighs the feather after their actions are accounted for, they get sent straight to Ammit.", "enter_ammit"],
 	["He forgot his lunch today, so he's extra hungry."],
-	["Otherwise, they may ascend to a heavenly existence", "enter_heaven"],
+	["Otherwise, they may ascend to a heavenly existence.", "enter_heaven"],
 	["That's about it. Alright, gotta run. Anubis out!", "prepare_for_start"],
 	["", "end_tutorial"]
 ]
@@ -60,7 +60,6 @@ func _on_button_pressed():
 func _on_scale_manager_tutorial_weight_dragged():
 	reset_to_default()
 	tut_arrow.visible = false
-	print("remove arrow")
 
 func make_tutorial_weight_interactable():
-	ScaleManager.make_tutorial_weight_interactable()
+	ScaleManager.make_tutorial_weight_interactable(true)

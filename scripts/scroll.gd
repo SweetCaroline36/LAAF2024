@@ -1,4 +1,5 @@
 extends Node2D
+class_name Scroll
 
 @export var animator : AnimationPlayer
 @export var text_box : RichTextLabel
@@ -12,3 +13,5 @@ func _ready():
 func play_scroll_anim():
 	animator.play("open_scroll")
 	
+func change_scroll_text(text:String):
+	text_box.text = text

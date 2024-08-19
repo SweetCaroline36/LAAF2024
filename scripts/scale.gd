@@ -13,3 +13,12 @@ func _on_scale_manager_scales_changed(weight:WeightObject, side:bool): #left is 
 	var rotation_destination = weights_on_scale[1] - weights_on_scale[0]
 	rotation_destination = clamp(rotation_destination, -1.25, 1.25)
 	top.rotate_scale(rotation_destination)
+
+func example_tilt(right_down:bool):
+	top.rotate_scale(0.3 if right_down else -0.3)
+
+func reset_scale():
+	ScaleManager.reset_scale()
+	weights_on_scale = [0, 0]
+	top.rotate_scale(0)
+	

@@ -1,11 +1,11 @@
 extends Node
 
 var current_game_state
+var is_tutorial := true
 
 enum GameState {
 	MENU, #generate trail, deal 3 gear and park cards, gain canteen, shuffle all
 	GAMESETUP, #get two year cards and pick one
-	TUTORIAL, #setup weather tokens for season
 	DAYONE
 }
 
@@ -19,7 +19,6 @@ func change_state(new_state:GameState):
 			pass
 		GameState.GAMESETUP:
 			ScaleManager.setup()
-		GameState.TUTORIAL:
-			pass
 		GameState.DAYONE:
-			pass
+			is_tutorial = false
+			print("day one")

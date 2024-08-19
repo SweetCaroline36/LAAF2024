@@ -1,6 +1,7 @@
 extends Node2D
 
 var weight_prefab = preload("res://scenes/weight.tscn")
+var initialized_weights = []
 var tutorial_weight
 var active_weight:WeightObject
 var tutorial := true
@@ -13,13 +14,14 @@ func setup():
 	pass
 	#generate_weights(number_of_weights)
 
-func generate_weights(length:int, location:Vector2, tut_weight:bool):
+func generate_weights(length:int, location:Vector2):
 	#instantiate sites and add to instances deck
 	for i in length:
 		var new_weight = weight_prefab.instantiate()
-		if tutorial:
+		if GameManager.is_tutorial:
 			new_weight.draggable = false
 			tutorial_weight = new_weight
+		initialized_weights.append(new_weight)
 		new_weight.position = location
 		new_weight.selected.connect(_on_weight_selected)
 		new_weight.released.connect(_on_weight_released)
@@ -46,10 +48,10 @@ func _on_weight_released():
 			print("starting zone: " + str(active_weight.current_zone))
 			print(closest_area.global_position)
 			print(active_weight.global_position)
-			if active_weight.current_zone == null and not tutorial:
-				generate_weights(1, Vector2(800, 0), false)
+			if active_weight.current_zone == null and not GameManager.is_tutorial:
+				generate_weights(1, Vector2(800, 0))
 				#active_weight.position -= active_weight.global_position
-			if closest_area.is_in_group("trash"):
+			if closest_area.is_in_group("trash") and not GameManager.is_tutorial:
 				#delete weight
 				active_weight.queue_free()
 			
@@ -61,10 +63,11 @@ func _on_weight_released():
 				scales_changed.emit(active_weight, false)
 			#active_weight.snap_to_site(closest_area)
 			active_weight.position -= active_weight.global_position
-			print(active_weight.global_position)
+			#print(active_weight.global_position)
 			make_weight_child_of_scale(active_weight, closest_area)
 			active_weight = null
-			if tutorial:
+			if GameManager.is_tutorial:
+				make_tutorial_weight_interactable(false)
 				tutorial_weight_dragged.emit()
 		else:
 			cancel_move()
@@ -82,10 +85,15 @@ func make_weight_child_of_scale(node, new_parent):
 	new_parent.add_child(node)
 	node.set_owner(new_parent)
 
-func make_tutorial_weight_interactable():
-	print(tutorial_weight)
+func make_tutorial_weight_interactable(on: bool):
 	if tutorial_weight:
-		tutorial_weight.draggable = true
+		tutorial_weight.draggable = on
+
+func reset_scale():
+	if initialized_weights.size():
+		for weight in initialized_weights:
+			weight.queue_free()
+		initialized_weights = []
 
 enum Zone {
 	SPAWN,

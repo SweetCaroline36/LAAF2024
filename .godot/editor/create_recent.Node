@@ -1,14 +1,14 @@
+Button
+Control
+Node2D
 RichTextLabel
 PanelContainer
-Control
 Sprite2D
 MarginContainer
-Button
 TextureRect
 VBoxContainer
 AnimationPlayer
 CollisionShape2D
 Area2D
-Node2D
 Container
 RigidBody2D
