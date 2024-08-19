@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://s6ro0ev5eici"]
+
+[ext_resource type="Texture2D" uid="uid://cighvg0mibn7w" path="res://assets/soul.png" id="1_18yr3"]
+
+[node name="Soul" type="Node2D"]
+scale = Vector2(0.5, 0.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 2
+texture = ExtResource("1_18yr3")

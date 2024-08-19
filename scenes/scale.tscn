@@ -1,10 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://clmxkt3itiuef"]
+[gd_scene load_steps=13 format=3 uid="uid://clmxkt3itiuef"]
 
 [ext_resource type="Script" path="res://scripts/scale.gd" id="1_dkm76"]
 [ext_resource type="Texture2D" uid="uid://b3210btf3qsc1" path="res://assets/scale.jpg" id="1_mmbqs"]
 [ext_resource type="Script" path="res://scripts/rotator.gd" id="2_76clj"]
 [ext_resource type="Texture2D" uid="uid://c4semlw3ppscs" path="res://assets/IMG_1502.PNG" id="4_kdfox"]
 [ext_resource type="Texture2D" uid="uid://cgn2ynvs74tn3" path="res://assets/IMG_1505.PNG" id="5_w3ho1"]
+[ext_resource type="PackedScene" uid="uid://s6ro0ev5eici" path="res://scenes/soul.tscn" id="6_8j8o6"]
+[ext_resource type="PackedScene" uid="uid://bn886bl1h6jb1" path="res://scenes/feather.tscn" id="6_idkkm"]
 [ext_resource type="Texture2D" uid="uid://ieiyds5kqk00" path="res://assets/IMG_1503.PNG" id="6_jk84q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2w5st"]
@@ -27,20 +29,20 @@ visible = false
 texture = ExtResource("1_mmbqs")
 
 [node name="PinJoint2D" type="PinJoint2D" parent="."]
-position = Vector2(487, -181)
+position = Vector2(-236, -189.05)
 node_a = NodePath("../Left")
 node_b = NodePath("../Top")
 bias = 0.9
 
 [node name="PinJoint2D2" type="PinJoint2D" parent="."]
-position = Vector2(988, -181)
+position = Vector2(265, -189.05)
 node_a = NodePath("../Right")
 node_b = NodePath("../Top")
 bias = 0.9
 
 [node name="Top" type="StaticBody2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(726, -177)
+position = Vector2(3, -185.05)
 script = ExtResource("2_76clj")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Top"]
@@ -55,7 +57,7 @@ position = Vector2(14.5, -3.5)
 shape = SubResource("RectangleShape2D_2w5st")
 
 [node name="Left" type="RigidBody2D" parent="."]
-position = Vector2(483, -44)
+position = Vector2(-240, -52.05)
 gravity_scale = 50.0
 linear_damp = 10.0
 
@@ -76,8 +78,11 @@ position = Vector2(0, 44)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Left/LeftSide"]
 shape = SubResource("RectangleShape2D_hvw2h")
 
+[node name="Soul" parent="Left/LeftSide" instance=ExtResource("6_8j8o6")]
+position = Vector2(-5, 29.05)
+
 [node name="Right" type="RigidBody2D" parent="."]
-position = Vector2(984, -41)
+position = Vector2(261, -49.05)
 gravity_scale = 50.0
 linear_damp = 10.0
 
@@ -98,16 +103,20 @@ position = Vector2(-4, 41)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Right/RightSide"]
 shape = SubResource("RectangleShape2D_hvw2h")
 
+[node name="Feather" parent="Right/RightSide" instance=ExtResource("6_idkkm")]
+position = Vector2(-1.99998, 89.05)
+
 [node name="Base" type="Sprite2D" parent="."]
-position = Vector2(707, -6.99999)
+position = Vector2(-16, -15.05)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("6_jk84q")
 region_enabled = true
 region_rect = Rect2(114.767, 14.2204, 1135.45, 1913.94)
 
 [node name="Trash" type="Area2D" parent="." groups=["trash"]]
+position = Vector2(695, -8)
 
 [node name="TrashBin" type="CollisionShape2D" parent="Trash"]
 unique_name_in_owner = true
-position = Vector2(1940, 74)
+position = Vector2(525, 74)
 shape = SubResource("RectangleShape2D_tmf5t")

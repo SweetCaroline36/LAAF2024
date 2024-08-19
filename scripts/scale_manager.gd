@@ -15,7 +15,7 @@ func generate_weights(length:int):
 	#instantiate sites and add to instances deck
 	for i in length:
 		var new_weight = weight_prefab.instantiate()
-		new_weight.position = Vector2(100*i + 400, 0)
+		new_weight.position = Vector2(100*i + 700, 0)
 		new_weight.selected.connect(_on_weight_selected)
 		new_weight.released.connect(_on_weight_released)
 		new_weight.cancelled.connect(_on_weight_cancelled)
