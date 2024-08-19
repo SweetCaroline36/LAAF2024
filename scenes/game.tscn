@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://du1k24kq0h70h"]
+[gd_scene load_steps=20 format=3 uid="uid://du1k24kq0h70h"]
 
 [ext_resource type="PackedScene" uid="uid://c2qi1c2yvowxx" path="res://scenes/book.tscn" id="2_ia2mo"]
 [ext_resource type="PackedScene" uid="uid://cudn4nx828xfx" path="res://scenes/scroll.tscn" id="3_1jb43"]
@@ -157,6 +157,54 @@ tracks/8/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Scale:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(453, -131)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("CanvasLayer/Book:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(960, 1080)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Scale:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("CanvasLayer/Book:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_8apaj"]
 resource_name = "character_enter"
@@ -306,19 +354,76 @@ resource_name = "burst_spin"
 length = 8.0
 loop_mode = 1
 
+[sub_resource type="Animation" id="Animation_66klc"]
+resource_name = "enter_scale"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Scale:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 1),
+"transitions": PackedFloat32Array(1, 0.233258),
+"update": 0,
+"values": [Vector2(453, -748), Vector2(453, -131)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Scale:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_jrdl6"]
+resource_name = "enter_book"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Book:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(960, 1590), Vector2(960, 1080)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Book:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dqfb6"]
 _data = {
 "RESET": SubResource("Animation_jaf00"),
 "burst_spin": SubResource("Animation_6krwo"),
 "character_enter": SubResource("Animation_8apaj"),
+"enter_book": SubResource("Animation_jrdl6"),
+"enter_scale": SubResource("Animation_66klc"),
 "scroll_trigger": SubResource("Animation_xd46i")
 }
 
 [node name="Game" type="Node2D"]
 
 [node name="Scale" parent="." instance=ExtResource("3_sk0eq")]
+visible = false
 z_index = -1
-position = Vector2(138, -131)
+position = Vector2(453, -131)
 
 [node name="Scroll" parent="." instance=ExtResource("3_1jb43")]
 position = Vector2(-560, 351)
@@ -364,15 +469,18 @@ libraries = {
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Control" parent="CanvasLayer" instance=ExtResource("2_ia2mo")]
+[node name="Book" parent="CanvasLayer" instance=ExtResource("2_ia2mo")]
 
-[node name="TextBox" parent="CanvasLayer" instance=ExtResource("8_fwnby")]
-offset_left = 528.0
-offset_top = 90.0
-offset_right = 528.0
-offset_bottom = 90.0
+[node name="TextBox" parent="CanvasLayer" node_paths=PackedStringArray("animator") instance=ExtResource("8_fwnby")]
+visible = false
+offset_left = 452.0
+offset_top = 40.0
+offset_right = 452.0
+offset_bottom = 40.0
+animator = NodePath("../../AnimationPlayer")
 
 [node name="JudgementButtons" type="Control" parent="CanvasLayer"]
+visible = false
 custom_minimum_size = Vector2(300, 900)
 layout_mode = 3
 anchors_preset = 6

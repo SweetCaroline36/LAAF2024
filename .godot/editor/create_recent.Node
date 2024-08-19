@@ -1,9 +1,9 @@
-VBoxContainer
-Button
-Control
 MarginContainer
 PanelContainer
+Button
 TextureRect
+VBoxContainer
+Control
 RichTextLabel
 Sprite2D
 AnimationPlayer
@@ -12,4 +12,3 @@ Area2D
 Node2D
 Container
 RigidBody2D
-AudioStreamPlayer2D

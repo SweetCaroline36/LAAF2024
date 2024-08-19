@@ -1,5 +1,6 @@
 extends Control
 
+@export var animator : AnimationPlayer
 @onready var panel_container = $PanelContainer
 @onready var text = $PanelContainer/MarginContainer/Text
 
@@ -10,7 +11,7 @@ var tutorial_text = [
 	["Alright intern, Anubis has a plane to catch. Let's make this quick."], 
 	["You'll be weighing these newly deceased souls against a feather, yada yada yada.", "enter_scale"], 
 	["You know the deal."], 
-	["They're gonna have a scroll on them determining the most significant actions of their lives.", "enter_scroll"], 
+	["They're gonna have a scroll on them determining the most significant actions of their lives.", "scroll_trigger"], 
 	["Unfortunately, our translator is on maternity leave, so you'll have to use this book.", "enter_book"],
 	["For every good deed, they get to add a Scarab Weight™️ to the feather side of our Holy Scale", "enter_weight_right"],
 	["For every bad deed, they get to add a Scarab Weight™️ to the soul side of our Holy Scale", "enter_weight_left"],
@@ -31,6 +32,11 @@ func next_text_slide():
 	text_index += 1
 	if tutorial_text[text_index].size() > 1:
 		text.text = tutorial_text[text_index][0]
-		#animation tutorial_text[text_index][1]
+		animator.play(tutorial_text[text_index][1])
 	else:
-		text.text = tutorial_text[text_index]
+		text.text = tutorial_text[text_index][0]
+
+
+func _on_button_pressed():
+	#check if condition is met (weight examples)
+	next_text_slide()
