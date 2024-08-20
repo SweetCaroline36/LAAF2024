@@ -13,14 +13,14 @@ var current_left_page = 0
 var page_data := [
 	"!3JI^a",
 	"Death\nTheft\nFood\nGiving\nChild\nRa",
-	"'zuZ,%",#address citizen
+	"'z\ntzZ,%",#address citizen
 	"Love\nPerson\nPharaoh\nMoney\nSoldier\nCitizen",
 	"T(e;`\nd",
 	"Praise\nSoul\nAnubis\nFor\nTo\nDid",
 	"k_W]/x", #cant backslash
 	"Negation\nFrom\nAdultered\nArson\nTemple\nAlcohol",
-	"5i\ny\nK",
-	"Lied\nEnemy\nAlly\nWork"
+	"5i\ny\nK\nU",
+	"Lied\nEnemy\nAlly\nWork\nSpouse"
 	]
 # Called when the node enters the scene tree for the first time.
 func _ready():

@@ -49,7 +49,7 @@ func _on_weight_released():
 			print(closest_area.global_position)
 			print(active_weight.global_position)
 			if active_weight.current_zone == null and not GameManager.is_tutorial:
-				generate_weights(1, Vector2(800, 0))
+				generate_weights(1, Vector2(608, 320))
 				#active_weight.position -= active_weight.global_position
 			if closest_area.is_in_group("trash") and not GameManager.is_tutorial:
 				#delete weight

@@ -13,5 +13,8 @@ func _ready():
 func play_scroll_anim():
 	animator.play("open_scroll")
 	
+func reset_scroll_anim():
+	animator.play("RESET")
+
 func change_scroll_text(text:String):
 	text_box.text = text

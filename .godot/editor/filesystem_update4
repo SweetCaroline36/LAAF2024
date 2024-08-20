@@ -6,3 +6,6 @@ res://scenes/book.tscn
 res://scenes/scroll.tscn
 res://scenes/text_box.tscn
 res://scripts/story_manager.gd
+res://scripts/scroll.gd
+res://scripts/scale_manager.gd
+res://scripts/book.gd

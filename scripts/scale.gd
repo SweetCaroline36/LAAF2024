@@ -18,7 +18,7 @@ func example_tilt(right_down:bool):
 	top.rotate_scale(0.3 if right_down else -0.3)
 
 func reset_scale():
+	top.rotate_scale(0)
 	ScaleManager.reset_scale()
 	weights_on_scale = [0, 0]
-	top.rotate_scale(0)
 	
