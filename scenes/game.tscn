@@ -1949,10 +1949,10 @@ texture = ExtResource("13_liw51")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Book" parent="CanvasLayer" instance=ExtResource("2_ia2mo")]
-offset_left = 30.0
-offset_top = 530.0
-offset_right = 30.0
-offset_bottom = 530.0
+offset_left = 990.0
+offset_top = 1610.0
+offset_right = 990.0
+offset_bottom = 1610.0
 
 [node name="TextBox" parent="CanvasLayer" node_paths=PackedStringArray("animator", "tut_arrow") instance=ExtResource("8_fwnby")]
 offset_left = 452.0
@@ -2051,10 +2051,10 @@ custom_minimum_size = Vector2(50, 50)
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -163.0
+offset_left = 1757.0
 offset_top = 11.0
-offset_right = -13.0
-offset_bottom = 201.0
+offset_right = 1907.0
+offset_bottom = 573.0
 grow_horizontal = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_dmspb")
 
