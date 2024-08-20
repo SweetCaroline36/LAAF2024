@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://du1k24kq0h70h"]
+[gd_scene load_steps=43 format=3 uid="uid://du1k24kq0h70h"]
 
 [ext_resource type="Script" path="res://scripts/story_manager.gd" id="1_2ro4k"]
 [ext_resource type="AudioStream" uid="uid://jt7yidj5u0n0" path="res://assets/nom-nom-nom_gPJiWn4.mp3" id="2_at0s3"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://dr2xx5ygqri6q" path="res://scenes/text_box.tscn" id="8_fwnby"]
 [ext_resource type="Script" path="res://scripts/tutorial_arrows.gd" id="8_sd0gt"]
 [ext_resource type="Texture2D" uid="uid://cyi5xv6ntyvl2" path="res://assets/textBox.png" id="13_agepp"]
+[ext_resource type="Texture2D" uid="uid://d1ixtqsxpptr0" path="res://assets/background.png" id="13_liw51"]
 [ext_resource type="Texture2D" uid="uid://d0wpiqfpx0h7w" path="res://assets/right-arrow.png" id="14_st6ts"]
 
 [sub_resource type="Animation" id="Animation_f510t"]
@@ -170,7 +171,7 @@ tracks/8/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(960, 1610)]
+"values": [Vector2(990, 1610)]
 }
 tracks/9/type = "value"
 tracks/9/imported = false
@@ -481,22 +482,10 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("CanvasLayer/TextBox/PanelContainer/MarginContainer/Arrow:visible")
+tracks/2/path = NodePath("Scroll:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(2.9),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Scroll:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -701,7 +690,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0.1, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(960, 1590), Vector2(960, 1080)]
+"values": [Vector2(990, 1601), Vector2(990, 1080)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -964,7 +953,6 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_t2qv3"]
 resource_name = "reset_world"
-length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -1047,7 +1035,7 @@ tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 2,
-"values": [Vector2(960, 1080)]
+"values": [Vector2(990, 1080)]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
@@ -1166,7 +1154,7 @@ tracks/16/path = NodePath("StoryManager")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/keys = {
-"times": PackedFloat32Array(1.9),
+"times": PackedFloat32Array(0.9),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
@@ -1254,7 +1242,7 @@ tracks/23/loop_wrap = true
 tracks/23/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 2,
+"update": 1,
 "values": [Vector2(170, 0)]
 }
 tracks/24/type = "value"
@@ -1354,6 +1342,54 @@ tracks/31/keys = {
 "args": [],
 "method": &"reset_scroll_anim"
 }]
+}
+tracks/32/type = "value"
+tracks/32/imported = false
+tracks/32/enabled = true
+tracks/32/path = NodePath("CanvasLayer/TextBox:position")
+tracks/32/interp = 1
+tracks/32/loop_wrap = true
+tracks/32/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(452, 40)]
+}
+tracks/33/type = "value"
+tracks/33/imported = false
+tracks/33/enabled = true
+tracks/33/path = NodePath("Character/Visual/Burst:self_modulate")
+tracks/33/interp = 1
+tracks/33/loop_wrap = true
+tracks/33/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 0.713726, 0.580392)]
+}
+tracks/34/type = "value"
+tracks/34/imported = false
+tracks/34/enabled = true
+tracks/34/path = NodePath("CanvasLayer/JudgementButtons/VBoxContainer/Ammit:disabled")
+tracks/34/interp = 1
+tracks/34/loop_wrap = true
+tracks/34/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/35/type = "value"
+tracks/35/imported = false
+tracks/35/enabled = true
+tracks/35/path = NodePath("CanvasLayer/JudgementButtons/VBoxContainer/Heaven:disabled")
+tracks/35/interp = 1
+tracks/35/loop_wrap = true
+tracks/35/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_xd46i"]
@@ -1737,10 +1773,19 @@ libraries = {
 "": SubResource("AnimationLibrary_dqfb6")
 }
 
+[node name="Background" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.780392)
+z_index = -5
+position = Vector2(-38, -22)
+scale = Vector2(3.3, 3)
+texture = ExtResource("13_liw51")
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Book" parent="CanvasLayer" instance=ExtResource("2_ia2mo")]
+offset_left = 30.0
 offset_top = 530.0
+offset_right = 30.0
 offset_bottom = 530.0
 
 [node name="TextBox" parent="CanvasLayer" node_paths=PackedStringArray("animator", "tut_arrow") instance=ExtResource("8_fwnby")]

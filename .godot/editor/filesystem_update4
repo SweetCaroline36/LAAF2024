@@ -9,3 +9,5 @@ res://scripts/story_manager.gd
 res://scripts/scroll.gd
 res://scripts/scale_manager.gd
 res://scripts/book.gd
+res://menus/scenes/main menu.tscn
+res://menus/scenes/settings menu.tscn

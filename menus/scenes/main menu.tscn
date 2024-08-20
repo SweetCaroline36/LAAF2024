@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://b6atrofp680y6"]
 
-[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_3ekv1"]
+[ext_resource type="Script" path="res://menus/scripts/main_menu.gd" id="1_3ekv1"]
 [ext_resource type="FontFile" uid="uid://c5kt0griuktvw" path="res://assets/papyrus-font-1723970133-0/papyrus.ttf" id="2_j7f3h"]
 
 [sub_resource type="Theme" id="Theme_a05su"]

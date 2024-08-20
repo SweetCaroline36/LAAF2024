@@ -1,10 +1,12 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1724110353
+::res://::1724121724
 icon.svg::CompressedTexture2D::522374892597326165::1723836062::1723846615::1::::<><>::
 test.tscn::PackedScene::5505219075193140594::1723869922::0::1::::<><>::uid://hpbo5rqrw87r::::res://icon.svg
-::res://assets/::1724115161
+::res://assets/::1724127877
+Al'ithnayn::Lazanya mp3.mp3::AudioStreamMP3::4875794460411401339::1724123930::1724124012::1::::<><>::
 Anubis1.PNG::CompressedTexture2D::3795042017429899252::1724100853::1724100914::1::::<><>::
 Anubis2.PNG::CompressedTexture2D::7511081086956945891::1724100850::1724100914::1::::<><>::
+background.png::CompressedTexture2D::9002118297864198767::1724127859::1724127897::1::::<><>::
 black-kettlebell-clipart.webp::CompressedTexture2D::7636608453858971141::1723837605::1723846615::1::::<><>::
 bookpage.png::CompressedTexture2D::1929587237423217275::1723913321::1723919227::1::::<><>::
 holy-final.mp3::AudioStreamMP3::1382797684075076692::1724115152::1724115163::1::::<><>::
@@ -51,27 +53,34 @@ Yiroglyphics-d9YgR.otf::FontFile::5401598304581995337::1723396974::1724025012::1
 Yiroglyphics-PKeJB.ttf::FontFile::5811654794458797037::1723396974::1724025012::1::::<><>::
 ::res://assets/yiroglyphics-font/misc/::1724025002
 yiro.txt::TextFile::-1::1723396974::0::1::::<><>::
-::res://scenes/::1724115037
-book.tscn::PackedScene::6701502504137201149::1724115037::0::1::::<><>::res://scripts/book.gd<>uid://sxdhblww7xs1::::res://assets/Untitled_Artwork 2.png<>uid://c5kt0griuktvw::::res://assets/papyrus-font-1723970133-0/papyrus.ttf<>uid://b7xf3xr52wgcm::::res://assets/left-arrow.png<>uid://co2hdt2rryk18::::res://assets/yiroglyphics-font/Yiroglyphics-PKeJB.ttf<>uid://d0wpiqfpx0h7w::::res://assets/right-arrow.png<>uid://bkqvd3awx8fwd::::res://assets/pageturn-102978.mp3
+::res://menus/::1724121729
+::res://menus/scenes/::1724123483
+main menu.tscn::PackedScene::4563459561606259659::1724121808::0::1::::<><>::res://menus/scripts/main_menu.gd<>uid://c5kt0griuktvw::::res://assets/papyrus-font-1723970133-0/papyrus.ttf
+settings menu.tscn::PackedScene::5457987870359887123::1724121846::0::1::::<><>::res://menus/scripts/settings_menu.gd<>uid://c5kt0griuktvw::::res://assets/papyrus-font-1723970133-0/papyrus.ttf
+::res://menus/scripts/::1724121718
+main_menu.gd::GDScript::-1::1724120816::0::1::::<>Control<>::
+settings_menu.gd::GDScript::-1::1724120816::0::1::::<>Control<>::
+::res://scenes/::1724127379
+book.tscn::PackedScene::6701502504137201149::1724127379::0::1::::<><>::res://scripts/book.gd<>uid://sxdhblww7xs1::::res://assets/Untitled_Artwork 2.png<>uid://c5kt0griuktvw::::res://assets/papyrus-font-1723970133-0/papyrus.ttf<>uid://b7xf3xr52wgcm::::res://assets/left-arrow.png<>uid://co2hdt2rryk18::::res://assets/yiroglyphics-font/Yiroglyphics-PKeJB.ttf<>uid://d0wpiqfpx0h7w::::res://assets/right-arrow.png<>uid://bkqvd3awx8fwd::::res://assets/pageturn-102978.mp3
 character.tscn::PackedScene::8907372192335809302::1724082400::0::1::::<><>::res://scripts/character.gd
 feather.tscn::PackedScene::3369059207951942728::1724082400::0::1::::<><>::uid://53jq2ledmchy::::res://assets/IMG_1499(1).PNG
-game.tscn::PackedScene::8617369671194488353::1724115037::0::1::::<><>::res://scripts/story_manager.gd<>uid://jt7yidj5u0n0::::res://assets/nom-nom-nom_gPJiWn4.mp3<>uid://c2qi1c2yvowxx::::res://scenes/book.tscn<>uid://cudn4nx828xfx::::res://scenes/scroll.tscn<>uid://clmxkt3itiuef::::res://scenes/scale.tscn<>uid://dy52ebeochivu::::res://scenes/character.tscn<>uid://csrwp2hcdkflc::::res://assets/IMG_1491.PNG<>uid://gwrkdbewjhh8::::res://assets/IMG_1489.PNG<>uid://bxcqhini3tsbe::::res://assets/starburst.png<>res://scripts/burst.gd<>uid://b7xf3xr52wgcm::::res://assets/left-arrow.png<>uid://dr2xx5ygqri6q::::res://scenes/text_box.tscn<>res://scripts/tutorial_arrows.gd<>uid://cyi5xv6ntyvl2::::res://assets/textBox.png<>uid://d0wpiqfpx0h7w::::res://assets/right-arrow.png
-scale.tscn::PackedScene::5571106570813341133::1724115037::0::1::::<><>::res://scripts/scale.gd<>uid://b3210btf3qsc1::::res://assets/scale.jpg<>res://scripts/rotator.gd<>uid://c4semlw3ppscs::::res://assets/IMG_1502.PNG<>uid://cgn2ynvs74tn3::::res://assets/IMG_1505.PNG<>uid://s6ro0ev5eici::::res://scenes/soul.tscn<>uid://bn886bl1h6jb1::::res://scenes/feather.tscn<>uid://bqsh00jfritrp::::res://assets/Scale base.PNG
-scroll.tscn::PackedScene::6183653202209062453::1724115037::0::1::::<><>::uid://vdd8fmrwn7ad::::res://assets/scroll.png<>res://scripts/scroll.gd<>uid://2qyaw8r5gmn8::::res://assets/bookpage.png<>uid://co2hdt2rryk18::::res://assets/yiroglyphics-font/Yiroglyphics-PKeJB.ttf
+game.tscn::PackedScene::8617369671194488353::1724127378::0::1::::<><>::res://scripts/story_manager.gd<>uid://jt7yidj5u0n0::::res://assets/nom-nom-nom_gPJiWn4.mp3<>uid://c2qi1c2yvowxx::::res://scenes/book.tscn<>uid://cudn4nx828xfx::::res://scenes/scroll.tscn<>uid://tx3qgb6l1tg3::::res://assets/holy-final.mp3<>uid://clmxkt3itiuef::::res://scenes/scale.tscn<>uid://dy52ebeochivu::::res://scenes/character.tscn<>uid://csrwp2hcdkflc::::res://assets/IMG_1491.PNG<>uid://gwrkdbewjhh8::::res://assets/IMG_1489.PNG<>uid://bxcqhini3tsbe::::res://assets/starburst.png<>res://scripts/burst.gd<>uid://b7xf3xr52wgcm::::res://assets/left-arrow.png<>uid://dr2xx5ygqri6q::::res://scenes/text_box.tscn<>res://scripts/tutorial_arrows.gd<>uid://cyi5xv6ntyvl2::::res://assets/textBox.png<>uid://d0wpiqfpx0h7w::::res://assets/right-arrow.png
+scale.tscn::PackedScene::5571106570813341133::1724127378::0::1::::<><>::res://scripts/scale.gd<>uid://b3210btf3qsc1::::res://assets/scale.jpg<>res://scripts/rotator.gd<>uid://c4semlw3ppscs::::res://assets/IMG_1502.PNG<>uid://cgn2ynvs74tn3::::res://assets/IMG_1505.PNG<>uid://s6ro0ev5eici::::res://scenes/soul.tscn<>uid://bn886bl1h6jb1::::res://scenes/feather.tscn<>uid://bqsh00jfritrp::::res://assets/Scale base.PNG
+scroll.tscn::PackedScene::6183653202209062453::1724127379::0::1::::<><>::uid://vdd8fmrwn7ad::::res://assets/scroll.png<>res://scripts/scroll.gd<>uid://2qyaw8r5gmn8::::res://assets/bookpage.png<>uid://co2hdt2rryk18::::res://assets/yiroglyphics-font/Yiroglyphics-PKeJB.ttf
 soul.tscn::PackedScene::1328453406109506188::1724082400::0::1::::<><>::uid://cighvg0mibn7w::::res://assets/soul.png
-text_box.tscn::PackedScene::8409649769449391638::1724115037::0::1::::<><>::res://scripts/text_box.gd
-weight.tscn::PackedScene::8178106551917796843::1724115037::0::1::::<><>::res://scripts/weight.gd<>uid://dftalsyrbt5gb::::res://assets/IMG_1506.PNG
-::res://scripts/::1724114794
-book.gd::GDScript::-1::1724047011::0::1::::<>Control<>::
+text_box.tscn::PackedScene::8409649769449391638::1724121477::0::1::::<><>::res://scripts/text_box.gd
+weight.tscn::PackedScene::8178106551917796843::1724127379::0::1::::<><>::res://scripts/weight.gd<>uid://dftalsyrbt5gb::::res://assets/IMG_1506.PNG
+::res://scripts/::1724125109
+book.gd::GDScript::-1::1724120656::0::1::::<>Control<>::
 burst.gd::GDScript::-1::1724082446::0::1::::<>Sprite2D<>::
 character.gd::GDScript::-1::1724106445::0::1::::Character<>Node2D<>::
 drag_manager.gd::GDScript::-1::1723844184::0::1::::<>Node<>::
 game_manager.gd::GDScript::-1::1724105200::0::1::::<>Node<>::
 rotator.gd::GDScript::-1::1724027712::0::1::::<>StaticBody2D<>::
-scale.gd::GDScript::-1::1724110359::0::1::::Scale<>Node2D<>::
-scale_manager.gd::GDScript::-1::1724109250::0::1::::<>Node2D<>::
-scroll.gd::GDScript::-1::1724106135::0::1::::Scroll<>Node2D<>::
-story_manager.gd::GDScript::-1::1724114794::0::1::::StoryManager<>Node2D<>::
+scale.gd::GDScript::-1::1724121476::0::1::::Scale<>Node2D<>::
+scale_manager.gd::GDScript::-1::1724118361::0::1::::<>Node2D<>::
+scroll.gd::GDScript::-1::1724118001::0::1::::Scroll<>Node2D<>::
+story_manager.gd::GDScript::-1::1724125109::0::1::::StoryManager<>Node2D<>::
 text_box.gd::GDScript::-1::1724108302::0::1::::TextBox<>Control<>::
 tutorial_arrows.gd::GDScript::-1::1724104099::0::1::::<>Sprite2D<>::
 weight.gd::GDScript::-1::1724099319::0::1::::WeightObject<>Area2D<>::

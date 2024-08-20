@@ -1,14 +1,14 @@
+Sprite2D
+AudioStreamPlayer
+PanelContainer
 AudioStreamPlayer2D
 Button
 Control
 Node2D
 RichTextLabel
-PanelContainer
-Sprite2D
 MarginContainer
 TextureRect
 VBoxContainer
 AnimationPlayer
 CollisionShape2D
 Area2D
-Container
