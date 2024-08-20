@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=3 uid="uid://cj05i62g4sqdn"]
+
+[ext_resource type="Script" path="res://scripts/settings_menu.gd" id="1_focu3"]
+[ext_resource type="FontFile" uid="uid://c5kt0griuktvw" path="res://assets/papyrus-font-1723970133-0/papyrus.ttf" id="2_cxpns"]
+
+[sub_resource type="Theme" id="Theme_0pqhu"]
+default_font = ExtResource("2_cxpns")
+
+[node name="Settings Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_focu3")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 900.0
+offset_top = 494.0
+offset_right = 1020.0
+offset_bottom = 586.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Volume" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_0pqhu")
+text = "Volume"
+
+[node name="VolumeSlider" type="HSlider" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+max_value = 1.0
+step = 0.1
+value = 0.5
+
+[node name="Back" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_0pqhu")
+text = "Back
+"
+
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/VolumeSlider" to="." method="_on_h_slider_value_changed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Back" to="." method="_on_back_pressed"]

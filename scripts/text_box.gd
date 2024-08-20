@@ -24,7 +24,7 @@ var tutorial_text = [
 	["Give it a shot. (Drag the weight onto the left scale)", "disable_button"],
 	["If you judge that their soul outweighs the feather after their actions are accounted for, they get sent straight to Ammit.", "enter_ammit"],
 	["He forgot his lunch today, so he's extra hungry."],
-	["Otherwise, they may ascend to a heavenly existence.", "enter_heaven"],
+	["Alternatively, if one's soul yet weighs less than a feather, they may ascend to a heavenly existence.", "enter_heaven"],
 	["That's about it. Alright, gotta run. Anubis out!", "prepare_for_start"],
 	["", "end_tutorial"]
 ]

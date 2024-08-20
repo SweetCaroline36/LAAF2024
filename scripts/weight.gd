@@ -23,7 +23,7 @@ func _process(_delta):
 			starting_pos = global_position
 			selected.emit(self)
 			offset = get_global_mouse_position() - global_position
-		if Input.is_action_pressed("click"): #drag obj
+		if Input.is_action_pressed("click") and is_dragging: #drag obj
 			global_position = get_global_mouse_position() - offset
 		elif Input.is_action_just_released("click"):
 			released.emit()
@@ -35,8 +35,9 @@ func return_to_prev():
 	global_position = starting_pos
 	
 func snap_to_site(site):
-	var tween = get_tree().create_tween()
-	tween.tween_property(self, "position", site.global_position, 0.3).set_ease(Tween.EASE_OUT)
+	global_position = site.global_position
+	#var tween = get_tree().create_tween()
+	#tween.tween_property(self, "position", site.global_position, 0.3).set_ease(Tween.EASE_OUT)
 	
 func _on_mouse_entered():
 	if draggable and not DragManager.is_dragging:

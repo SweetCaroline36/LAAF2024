@@ -8,8 +8,11 @@ var weights_on_scale := [0, 0]
 func _ready():
 	ScaleManager.scales_changed.connect(_on_scale_manager_scales_changed)
 
-func _on_scale_manager_scales_changed(weight:WeightObject, side:bool): #left is true, right is false
-	weights_on_scale[0 if side else 1] += weight.weight
+func _on_scale_manager_scales_changed(weight:WeightObject, side:bool, adding:bool): #left is true, right is false
+	if adding:
+		weights_on_scale[0 if side else 1] += weight.weight
+	else:
+		weights_on_scale[0 if side else 1] -= weight.weight			
 	var rotation_destination = weights_on_scale[1] - weights_on_scale[0]
 	rotation_destination = clamp(rotation_destination, -1.25, 1.25)
 	top.rotate_scale(rotation_destination)

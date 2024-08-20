@@ -4,7 +4,6 @@ var weight_prefab = preload("res://scenes/weight.tscn")
 var initialized_weights = []
 var tutorial_weight
 var active_weight:WeightObject
-var tutorial := true
 
 var number_of_weights := 1 #can change for different levels (maybe 1-2 for first level)
 signal scales_changed
@@ -44,28 +43,29 @@ func _on_weight_released():
 				if dist < closest_dist:
 					closest_dist = dist
 					closest_area = close_area
-			#snap to closest
-			print("starting zone: " + str(active_weight.current_zone))
-			print(closest_area.global_position)
-			print(active_weight.global_position)
+
 			if active_weight.current_zone == null and not GameManager.is_tutorial:
 				generate_weights(1, Vector2(608, 320))
+			elif active_weight.current_zone == 1 and not closest_area.is_in_group("left"):
+				scales_changed.emit(active_weight, true, false)
+			elif active_weight.current_zone == 2 and not closest_area.is_in_group("right"):
+				scales_changed.emit(active_weight, false, false)
 				#active_weight.position -= active_weight.global_position
 			if closest_area.is_in_group("trash") and not GameManager.is_tutorial:
 				#delete weight
+				initialized_weights.pop_at(initialized_weights.find(active_weight))
 				active_weight.queue_free()
 			
-			if closest_area.is_in_group("left"):
+			if closest_area.is_in_group("left") and not active_weight.current_zone == 1:
 				active_weight.current_zone = Zone.LEFT
-				scales_changed.emit(active_weight, true)
-			elif closest_area.is_in_group("right"):
+				scales_changed.emit(active_weight, true, true)
+			elif closest_area.is_in_group("right") and not active_weight.current_zone == 2:
 				active_weight.current_zone = Zone.RIGHT
-				scales_changed.emit(active_weight, false)
-			#active_weight.snap_to_site(closest_area)
-			active_weight.position -= active_weight.global_position
-			#print(active_weight.global_position)
+				scales_changed.emit(active_weight, false, true)
 			make_weight_child_of_scale(active_weight, closest_area)
+			active_weight.snap_to_site(closest_area)
 			active_weight = null
+			
 			if GameManager.is_tutorial:
 				make_tutorial_weight_interactable(false)
 				tutorial_weight_dragged.emit()

@@ -1,13 +1,16 @@
-res://scenes/game.tscn
-res://scripts/scale.gd
 res://scenes/scale.tscn
+res://scripts/scale.gd
+res://scenes/game.tscn
+res://scripts/scale_manager.gd
 res://scenes/weight.tscn
 res://scenes/book.tscn
 res://scenes/scroll.tscn
-res://scenes/text_box.tscn
-res://scripts/story_manager.gd
+res://scripts/weight.gd
 res://scripts/scroll.gd
-res://scripts/scale_manager.gd
 res://scripts/book.gd
-res://menus/scenes/main menu.tscn
-res://menus/scenes/settings menu.tscn
+res://scripts/story_manager.gd
+res://scripts/game_manager.gd
+res://scripts/day_label.gd
+res://scripts/mistakes_label.gd
+res://MenusAndMusic/autoloads/MusicController.tscn
+res://scenes/MusicController.tscn

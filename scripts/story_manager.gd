@@ -7,7 +7,7 @@ class_name StoryManager
 @export var said_text : TextBox
 @export var scroll : Scroll
 var test_index := 0
-var current_day := 0		#true = heaven, scroll symbols
+var human_count := 0		#true = heaven, scroll symbols
 var easy_scroll_meanings = [
 	["a'\n",true], ["JI\n",true], [",!\n",false], ["J3\n",false], ["tz'\n",true], ["Z3\n",false], ["Z'\n",false], ["J'\n",false], ["^'\n",true]
 ]
@@ -37,7 +37,7 @@ func new_person():
 	character.character_enter()
 	ScaleManager.generate_weights(1, Vector2(608, 320))
 
-func generate_random_scroll(amount:int):
+func generate_random_scroll(_amount:int):
 	#var items = intermediate_scroll_meanings.duplicate()
 	#items.shuffle()
 	#var scroll_str = "[center]"
@@ -54,10 +54,15 @@ func _on_skip_button_pressed():
 	begin_day(1)
 	
 func reset_world():
-	animator.play("reset_world")
+	if human_count < 6:
+		animator.play("reset_world")
+	else:
+		GameManager.change_state(GameManager.GameState.DAYTWO)
 	
 func _on_heaven_pressed():
+	human_count += 1
 	animator.play("send_to_heaven")
 
 func _on_ammit_pressed():
+	human_count += 1
 	animator.play("send_to_ammit")

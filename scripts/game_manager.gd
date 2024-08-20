@@ -2,11 +2,14 @@ extends Node
 
 var current_game_state
 var is_tutorial := true
+var current_day : int
+signal day_change
 
 enum GameState {
 	MENU, #generate trail, deal 3 gear and park cards, gain canteen, shuffle all
 	GAMESETUP, #get two year cards and pick one
-	DAYONE
+	DAYONE,
+	DAYTWO
 }
 
 func _ready():
@@ -21,4 +24,7 @@ func change_state(new_state:GameState):
 			ScaleManager.setup()
 		GameState.DAYONE:
 			is_tutorial = false
-			print("day one")
+			current_day = 1
+		GameState.DAYTWO:
+			current_day = 2
+			day_change.emit()

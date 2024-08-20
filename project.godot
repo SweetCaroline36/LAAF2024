@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 DragManager="*res://scripts/drag_manager.gd"
 ScaleManager="*res://scripts/scale_manager.gd"
 GameManager="*res://scripts/game_manager.gd"
+MusicController="*res://scripts/music_controller.gd"
 
 [display]
 
