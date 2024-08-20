@@ -1,15 +1,25 @@
 extends Control
 
-@export var daily_sheet:TextureRect
-@export var rules_left:TextureRect
-@export var rules_right:TextureRect
-@export var left_text_box:RichTextLabel
-@export var left_trans_box:RichTextLabel
-@export var right_text_box:RichTextLabel
-@export var right_trans_box:RichTextLabel
-@export var left_button:Button
-@export var right_button:Button
-@export var page_turn_sound:AudioStreamPlayer2D
+@onready var daily_sheet: TextureRect = $TextureRect2/DailyChangeSheet
+@onready var rules_left: TextureRect = $TextureRect/RulesLeft
+@onready var rules_right: TextureRect = $TextureRect2/RulesRight
+@onready var left_text_box: RichTextLabel = $TextureRect/Text
+@onready var left_trans_box: RichTextLabel = $TextureRect/Translation
+@onready var right_text_box: RichTextLabel = $TextureRect2/Text
+@onready var right_trans_box: RichTextLabel = $TextureRect2/Translation
+@onready var left_button: Button = $TextureRect/LastPage
+@onready var right_button: Button = $TextureRect2/NextPage
+@onready var page_turn_sound: AudioStreamPlayer2D = $AudioStreamPlayer2D
+
+#@export var daily_sheet:TextureRect
+#@export var rules_left:TextureRect
+#@export var rules_right:TextureRect
+#@export var left_text_box:RichTextLabel
+#@export var left_trans_box:RichTextLabel
+#@export var right_trans_box:RichTextLabel
+#@export var left_button:Button
+#@export var right_button:Button
+#@export var page_turn_sound:AudioStreamPlayer2D
 
 var current_left_page = 0
 

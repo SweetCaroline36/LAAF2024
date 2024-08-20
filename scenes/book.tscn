@@ -3,20 +3,19 @@
 [ext_resource type="Script" path="res://scripts/book.gd" id="1_qje7g"]
 [ext_resource type="Texture2D" uid="uid://sxdhblww7xs1" path="res://assets/Untitled_Artwork 2.png" id="2_6oth8"]
 [ext_resource type="FontFile" uid="uid://c5kt0griuktvw" path="res://assets/papyrus-font-1723970133-0/papyrus.ttf" id="3_5kko0"]
+[ext_resource type="Theme" uid="uid://byiexvkfyydaq" path="res://assets/heiroFont.tres" id="3_6qgth"]
 [ext_resource type="Texture2D" uid="uid://b7xf3xr52wgcm" path="res://assets/left-arrow.png" id="3_7fux7"]
-[ext_resource type="FontFile" uid="uid://co2hdt2rryk18" path="res://assets/yiroglyphics-font/Yiroglyphics-PKeJB.ttf" id="3_iuwt0"]
+[ext_resource type="Theme" uid="uid://bmk6ddsknq7xs" path="res://assets/papyrusFont.tres" id="4_nmoaj"]
 [ext_resource type="Texture2D" uid="uid://d0wpiqfpx0h7w" path="res://assets/right-arrow.png" id="4_yqyqh"]
 [ext_resource type="AudioStream" uid="uid://bkqvd3awx8fwd" path="res://assets/pageturn-102978.mp3" id="5_l8qrb"]
 [ext_resource type="Texture2D" uid="uid://2qyaw8r5gmn8" path="res://assets/bookpage.png" id="6_yg3bd"]
 [ext_resource type="Texture2D" uid="uid://bepcj7jjia3e2" path="res://assets/bookpage2.png" id="7_q6e2q"]
 
-[sub_resource type="Theme" id="Theme_o6enx"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1i52v"]
+bg_color = Color(0.682353, 0.580392, 0.466667, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7ub7t"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1i52v"]
-bg_color = Color(0.682353, 0.580392, 0.466667, 0)
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -29,7 +28,7 @@ grow_horizontal = 2
 grow_vertical = 0
 mouse_filter = 1
 
-[node name="Book" type="HBoxContainer" parent="." node_paths=PackedStringArray("daily_sheet", "rules_left", "rules_right", "left_text_box", "left_trans_box", "right_text_box", "right_trans_box", "left_button", "right_button", "page_turn_sound")]
+[node name="Book" type="HBoxContainer" parent="."]
 layout_mode = 0
 offset_left = -260.0
 offset_top = -468.0
@@ -39,16 +38,6 @@ tooltip_text = "Translation Guide"
 theme_override_constants/separation = 1
 alignment = 1
 script = ExtResource("1_qje7g")
-daily_sheet = NodePath("TextureRect2/DailyChangeSheet")
-rules_left = NodePath("TextureRect/RulesLeft")
-rules_right = NodePath("TextureRect2/RulesRight")
-left_text_box = NodePath("TextureRect/Text")
-left_trans_box = NodePath("TextureRect/Translation")
-right_text_box = NodePath("TextureRect2/Text")
-right_trans_box = NodePath("TextureRect2/Translation")
-left_button = NodePath("TextureRect/LastPage")
-right_button = NodePath("TextureRect2/NextPage")
-page_turn_sound = NodePath("AudioStreamPlayer2D")
 
 [node name="TextureRect" type="TextureRect" parent="Book"]
 layout_mode = 2
@@ -70,10 +59,7 @@ offset_right = -183.911
 offset_bottom = 0.100006
 grow_horizontal = 2
 grow_vertical = 2
-theme = SubResource("Theme_o6enx")
-theme_override_fonts/normal_font = ExtResource("3_iuwt0")
-theme_override_font_sizes/normal_font_size = 80
-theme_override_styles/normal = SubResource("StyleBoxFlat_7ub7t")
+theme = ExtResource("3_6qgth")
 text = "!3JI^a"
 fit_content = true
 scroll_active = false
@@ -94,9 +80,7 @@ offset_right = 0.0886536
 offset_bottom = 0.100006
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/normal_font = ExtResource("3_5kko0")
-theme_override_font_sizes/normal_font_size = 42
-theme_override_styles/normal = SubResource("StyleBoxFlat_7ub7t")
+theme = ExtResource("4_nmoaj")
 text = "Death
 Theft
 Food
@@ -110,6 +94,7 @@ drag_and_drop_selection_enabled = false
 
 [node name="RulesLeft" type="TextureRect" parent="Book/TextureRect"]
 visible = false
+layout_mode = 0
 offset_right = 347.727
 offset_bottom = 450.0
 texture = ExtResource("6_yg3bd")
@@ -130,8 +115,8 @@ offset_right = 19.1704
 offset_bottom = 1.10001
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/line_separation = -9
 theme_override_constants/outline_size = 1
+theme_override_constants/line_separation = -9
 theme_override_fonts/normal_font = ExtResource("3_5kko0")
 theme_override_font_sizes/normal_font_size = 32
 theme_override_styles/focus = SubResource("StyleBoxFlat_1i52v")
@@ -180,10 +165,7 @@ offset_right = -191.83
 offset_bottom = 0.100006
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/normal_font = ExtResource("3_iuwt0")
-theme_override_font_sizes/normal_font_size = 80
-theme_override_styles/focus = SubResource("StyleBoxFlat_1i52v")
-theme_override_styles/normal = SubResource("StyleBoxFlat_7ub7t")
+theme = ExtResource("3_6qgth")
 text = "!3JI^a"
 fit_content = true
 scroll_active = false
@@ -204,10 +186,7 @@ offset_right = 37.1704
 offset_bottom = 0.100006
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/normal_font = ExtResource("3_5kko0")
-theme_override_font_sizes/normal_font_size = 42
-theme_override_styles/focus = SubResource("StyleBoxFlat_1i52v")
-theme_override_styles/normal = SubResource("StyleBoxFlat_7ub7t")
+theme = ExtResource("4_nmoaj")
 text = "Death
 Theft
 Food
@@ -264,8 +243,8 @@ offset_right = 40.7947
 offset_bottom = 1.10001
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/line_separation = -5
 theme_override_constants/outline_size = 2
+theme_override_constants/line_separation = -5
 theme_override_fonts/normal_font = ExtResource("3_5kko0")
 theme_override_font_sizes/normal_font_size = 35
 theme_override_styles/focus = SubResource("StyleBoxFlat_1i52v")
@@ -279,6 +258,7 @@ drag_and_drop_selection_enabled = false
 
 [node name="RulesRight" type="TextureRect" parent="Book/TextureRect2"]
 visible = false
+layout_mode = 0
 offset_left = 0.999998
 offset_right = 348.727
 offset_bottom = 450.0
@@ -303,8 +283,8 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/default_color = Color(0.331819, 0.470728, 0.438113, 1)
 theme_override_colors/font_outline_color = Color(0.713726, 0.47451, 0.403922, 1)
-theme_override_constants/line_separation = -9
 theme_override_constants/outline_size = 1
+theme_override_constants/line_separation = -9
 theme_override_fonts/normal_font = ExtResource("3_5kko0")
 theme_override_font_sizes/normal_font_size = 32
 theme_override_styles/focus = SubResource("StyleBoxFlat_1i52v")

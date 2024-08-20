@@ -1,0 +1,15 @@
+res://scenes/book.tscn::c572aeada3c3dd69e82a1169ceecada5::1724175976::res://.godot/exported/133200997/export-3706b2d45c2487d4cad89a78e81c43f9-book.scn
+res://scenes/character.tscn::29878696e5a3dd56ee5739bff01985a0::1724082400::res://.godot/exported/133200997/export-b6bd7a241034177d7fe082a7597ba8ea-character.scn
+res://scenes/credits.tscn::77fac59eeec1fd254f0005ed55321149::1724174358::res://.godot/exported/133200997/export-5458de4021be8c034221a84b705724a2-credits.scn
+res://scenes/feather.tscn::029084d5fb8489dc8f1f3799ba7a0038::1724082400::res://.godot/exported/133200997/export-3420d42c03a4f28aeb3d2c32338c3e90-feather.scn
+res://scenes/game.tscn::14ae718cd29e5e0c47590cca9608e562::1724175976::res://.godot/exported/133200997/export-c2a7af834e91ff64325daddf58e45dc0-game.scn
+res://scenes/main menu.tscn::aa1796490521f2de6c3ccddd3d160302::1724174358::res://.godot/exported/133200997/export-ce437267b8bb1179a3485e665475480c-main menu.scn
+res://scenes/MusicController.tscn::d3de0352e7f133de58194b0f51262090::1724166346::res://.godot/exported/133200997/export-6418fcd051e8a385e10ed028effa627c-MusicController.scn
+res://scenes/scale.tscn::a85b7f7490f9d3c9161f6fa0d6db554b::1724175976::res://.godot/exported/133200997/export-5df171729b9fd0981702146a5c9677ed-scale.scn
+res://scenes/scroll.tscn::5d36b4c676a68b0f54758dbb51732f04::1724175976::res://.godot/exported/133200997/export-8f56a64b7053159fe799288e83ccd8ee-scroll.scn
+res://scenes/settings menu.tscn::58a0efb0388b4530816a6023de26258b::1724174358::res://.godot/exported/133200997/export-fa8e8a238bb378929ad802264336601e-settings menu.scn
+res://scenes/soul.tscn::13aa87ba38f655963408d586f744d959::1724174358::res://.godot/exported/133200997/export-4d5e1bed43171403055adbec81018530-soul.scn
+res://scenes/text_box.tscn::d9bd809f81218c672f0e49df04ecdfe4::1724121477::res://.godot/exported/133200997/export-a2d94dd827cfb5c5dbf81016c14f1324-text_box.scn
+res://scenes/weight.tscn::e356f144d2b2d1eaeebf40384bda35c2::1724175976::res://.godot/exported/133200997/export-eedec4244c80e61b1b865df03f7745b8-weight.scn
+res://assets/heiroFont.tres::ebb9b57848f0f1bd70023f03aed3e68f::1724175339::res://.godot/exported/133200997/export-c40db713d41a81b902556eb0b4afee25-heiroFont.res
+res://assets/papyrusFont.tres::93cc30ba449c9ade2fe1481dba2262f1::1724175400::res://.godot/exported/133200997/export-827ba729615d9bb84c42e66dc06b2099-papyrusFont.res

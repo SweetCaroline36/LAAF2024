@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://bmk6ddsknq7xs"]
+
+[ext_resource type="FontFile" uid="uid://c5kt0griuktvw" path="res://assets/papyrus-font-1723970133-0/papyrus.ttf" id="1_gdkmq"]
+
+[resource]
+default_font = ExtResource("1_gdkmq")
+default_font_size = 42

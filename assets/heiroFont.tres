@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://byiexvkfyydaq"]
+
+[ext_resource type="FontFile" uid="uid://co2hdt2rryk18" path="res://assets/yiroglyphics-font/Yiroglyphics-PKeJB.ttf" id="1_i1gds"]
+
+[resource]
+default_font = ExtResource("1_i1gds")
+default_font_size = 80

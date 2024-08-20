@@ -455,10 +455,34 @@ tracks/31/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/32/type = "value"
+tracks/32/imported = false
+tracks/32/enabled = true
+tracks/32/path = NodePath("CanvasLayer/Book:visible")
+tracks/32/interp = 1
+tracks/32/loop_wrap = true
+tracks/32/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/33/type = "value"
+tracks/33/imported = false
+tracks/33/enabled = true
+tracks/33/path = NodePath("CanvasLayer/DayCount:size")
+tracks/33/interp = 1
+tracks/33/loop_wrap = true
+tracks/33/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(150, 173)]
+}
 
 [sub_resource type="Animation" id="Animation_8apaj"]
 resource_name = "character_enter"
-length = 3.0
+length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -478,7 +502,7 @@ tracks/1/path = NodePath("CanvasLayer/TextBox:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(2.9),
+"times": PackedFloat32Array(0.933333),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
@@ -957,6 +981,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_t2qv3"]
 resource_name = "reset_world"
+capture_included = true
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -1399,6 +1424,7 @@ tracks/35/keys = {
 [sub_resource type="Animation" id="Animation_xd46i"]
 resource_name = "scroll_trigger"
 length = 3.0
+capture_included = true
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -1551,6 +1577,7 @@ tracks/11/keys = {
 [sub_resource type="Animation" id="Animation_jopwx"]
 resource_name = "send_to_ammit"
 length = 3.0
+capture_included = true
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -1619,6 +1646,7 @@ tracks/4/keys = {
 [sub_resource type="Animation" id="Animation_kc3c6"]
 resource_name = "send_to_heaven"
 length = 3.0
+capture_included = true
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -1699,6 +1727,93 @@ corner_radius_bottom_left = 20
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ekp5d"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="Animation" id="Animation_ppqvy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1757, 11)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(150, 156)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:anchors_preset")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("VBoxContainer/Panel:custom_minimum_size")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("VBoxContainer/MistakesLabel:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("VBoxContainer:size")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(150, 173)]
+}
 
 [sub_resource type="Animation" id="Animation_t5vtw"]
 resource_name = "end_of_day"
@@ -1792,81 +1907,6 @@ tracks/6/keys = {
 }]
 }
 
-[sub_resource type="Animation" id="Animation_ppqvy"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1757, 11)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:size")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(150, 156)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:scale")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath(".:anchors_preset")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [1]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("VBoxContainer/Panel:custom_minimum_size")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("VBoxContainer/MistakesLabel:visible")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fgncq"]
 _data = {
 "RESET": SubResource("Animation_ppqvy"),
@@ -1878,7 +1918,8 @@ _data = {
 [node name="Background" type="Sprite2D" parent="."]
 light_mask = 2
 visibility_layer = 2
-z_index = -5
+z_index = -10
+z_as_relative = false
 position = Vector2(0, 97)
 scale = Vector2(0.73, 0.58)
 texture = ExtResource("13_sdy67")
@@ -1899,12 +1940,13 @@ stream = ExtResource("3_fg5it")
 
 [node name="Scale" parent="." instance=ExtResource("3_sk0eq")]
 visible = false
-z_index = -1
+z_index = 1
 position = Vector2(453, -131)
 
 [node name="Scroll" parent="." instance=ExtResource("3_1jb43")]
 visible = false
 self_modulate = Color(1, 1, 1, 0)
+z_index = 1
 position = Vector2(-560, 351)
 scale = Vector2(1e-05, 1e-05)
 
@@ -2101,13 +2143,13 @@ anchor_right = 1.0
 offset_left = -163.0
 offset_top = 11.0
 offset_right = -13.0
-offset_bottom = 184.0
+offset_bottom = 173.0
 grow_horizontal = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_dmspb")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/DayCount"]
 layout_mode = 2
-theme_override_constants/separation = 17
+theme_override_constants/separation = 6
 
 [node name="Panel" type="Panel" parent="CanvasLayer/DayCount/VBoxContainer"]
 layout_mode = 2
