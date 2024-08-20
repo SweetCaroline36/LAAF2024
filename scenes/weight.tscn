@@ -11,10 +11,10 @@ z_index = 1
 script = ExtResource("1_nio03")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(3, -3)
+position = Vector2(3, -2)
 scale = Vector2(0.08, 0.08)
 texture = ExtResource("2_x105g")
-region_rect = Rect2(3.02009, 84.333, 106.121, 140.554)
+region_rect = Rect2(595.108, 310.071, 1621.53, 1120.26)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_meiol")

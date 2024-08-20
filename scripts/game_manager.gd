@@ -26,5 +26,5 @@ func change_state(new_state:GameState):
 			is_tutorial = false
 			current_day = 1
 		GameState.DAYTWO:
-			current_day = 2
+			current_day += 1
 			day_change.emit()

@@ -10,7 +10,32 @@ class_name TextBox
 
 var text_index := 0
 
-var dialogue_options = ["I was pretty good I think...", "Please let me through! My wife is on the other side.", "You're pretty cute aha", "AHHHHHHHHHHHHHHHHHHHHHHHHHHHHH", "Wait... you're not the real Anubis!"]
+var dialogue_options = [
+	"I was pretty good I think...", "Please let me through! My wife is on the other side.", "You're pretty cute aha", "AHHHHHHHHHHHHHHHHHHHHHHHHHHHHH", "Wait... you're not the real Anubis!",
+	"Can we hurry this along?",
+	"Don’t forget about the time I could’ve stolen that necklace but then didn’t!",
+	"You can’t see [i]everything[/i] we did…right?",
+	"Oh what, was Anubis too busy to judge me himself?",
+	"Is there a bathroom in here?",
+	"Please, Ammit would hate the way I taste I’m sure",
+	"You’re telling me my whole life fits on this one scroll?",
+	"Ahnk ahnk my uber is here",
+	"Am I really being judged for eternity by the new guy?",
+	"You can just send me on up, I’m a good guy, you can trust me",
+	"Well let’s see your scroll if you think you’re so high and mighty eh?",
+	"I really did try my best, that counts for something right?",
+	"How much for you to tip the scales in my favor huh?",
+	"Ra Ra, ooh la la",
+	"Please, I’ll do anything, just don’t send me to Ammit. Anything but that!!",
+	"No, no. I can’t be here. I was supposed to get married next week",
+	"But what about my kids, who will look after them? Send me back please!!",
+	"But, I was so young…",
+	"You’re gonna want to send me on through. Trust me, I know the Pharaoh.",
+	"Not Ammit, I beg of you! Just send me up, no one has to know!",
+	"If you let me on through I’ll make it worth your while...",
+	"It all happened so fast, I never even saw it coming…",
+	"Any chance you could just let this one slide",
+]
 var tutorial_text = [
 	["Alright intern, Anubis has a plane to catch. Let's make this quick."], 
 	["You'll be weighing these newly deceased souls against a feather, yada yada yada.", "enter_scale"], 

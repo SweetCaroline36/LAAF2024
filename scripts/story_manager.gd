@@ -16,7 +16,7 @@ var intermediate_scroll_meanings = [ #decree
 	["E`JI\n",true], ["tz`ZIk\n",false], ["Wd\n",false],
 	["E`ZI\n",true], ["i`JI\n",true], ["tz;!k\n",false],
 	["^`JI\n",true], ["tz_J3\n",true], ["^`IJ3\n",false], #qustionable (stole from enemy to give to child)
-	["x`\n",false], ["tz`ZI\n",true], [",i!\n",false],  #qustionable (killed enemy soldier)
+	["x`\n",false], ["tz`ZI\n",true], [",i!\n",true],  #qustionable (killed enemy soldier)
 ]
 
 func _ready():
@@ -37,13 +37,16 @@ func new_person():
 	ScaleManager.generate_weights(1, Vector2(608, 320))
 
 func generate_random_scroll(amount:int):
-	var items = intermediate_scroll_meanings.duplicate()
+	var items
+	if GameManager.current_day == 1:
+		items = easy_scroll_meanings.duplicate()
+	else:
+		items = intermediate_scroll_meanings.duplicate()
 	items.shuffle()
 	var scroll_str = "[center]"
 	for n in amount:
 		scroll_str += str(items.pop_back()[0])
 		scroll_str += "\n"
-	print(scroll_str)
 	scroll.change_scroll_text(scroll_str)
 	#var new_str = intermediate_scroll_meanings[test_index][0] + intermediate_scroll_meanings[test_index+1][0]
 	#scroll.change_scroll_text(new_str)
@@ -66,3 +69,7 @@ func _on_heaven_pressed():
 func _on_ammit_pressed():
 	human_count += 1
 	animator.play("send_to_ammit")
+	
+func _input(event):
+	if event.is_action_pressed("ui_cancel"):
+		get_tree().quit()

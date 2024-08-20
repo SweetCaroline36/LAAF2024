@@ -24,7 +24,7 @@ var page_data := [
 	"Love\nPerson\nPharaoh\nMoney\nSoldier\nCitizen",
 	"T(e;`\nd",
 	"Praise\nSoul\nAnubis\nFor\nTo\nDid",
-	"k_W]/x", #cant backslash
+	"k_W]Ex", #cant backslash
 	"Negation\nFrom\nAdultered\nArson\nTemple\nAlcohol",
 	"5i\ny\nK\nU",
 	"Lied\nEnemy\nAlly\nWork\nSpouse",

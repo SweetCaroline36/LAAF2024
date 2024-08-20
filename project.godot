@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Light As A Feather"
-run/main_scene="res://scenes/game.tscn"
+run/main_scene="res://scenes/main menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -20,7 +20,7 @@ config/icon="res://icon.svg"
 DragManager="*res://scripts/drag_manager.gd"
 ScaleManager="*res://scripts/scale_manager.gd"
 GameManager="*res://scripts/game_manager.gd"
-MusicController="*res://scripts/music_controller.gd"
+MusicController="*res://scenes/MusicController.tscn"
 
 [display]
 

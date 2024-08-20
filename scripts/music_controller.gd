@@ -1,6 +1,6 @@
 extends Node
 
-var music = load("res://assets/Music.mp3")
+@onready var music = load("res://assets/Music.mp3")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

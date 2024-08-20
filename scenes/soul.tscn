@@ -1,10 +1,13 @@
 [gd_scene load_steps=2 format=3 uid="uid://s6ro0ev5eici"]
 
-[ext_resource type="Texture2D" uid="uid://cighvg0mibn7w" path="res://assets/soul.png" id="1_18yr3"]
+[ext_resource type="Texture2D" uid="uid://eynqdono82j6" path="res://assets/Soul copy.PNG" id="1_sv06h"]
 
 [node name="Soul" type="Node2D"]
 scale = Vector2(0.5, 0.5)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(1, 0.607843, 1, 1)
 z_index = 2
-texture = ExtResource("1_18yr3")
+position = Vector2(0, -34)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("1_sv06h")
