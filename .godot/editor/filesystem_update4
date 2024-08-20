@@ -1,14 +1,8 @@
 res://scenes/game.tscn
+res://scripts/scale.gd
 res://scenes/scale.tscn
 res://scenes/weight.tscn
 res://scenes/book.tscn
 res://scenes/scroll.tscn
 res://scenes/text_box.tscn
-res://scripts/game_manager.gd
-res://scripts/character.gd
-res://scripts/scale.gd
-res://scripts/scale_manager.gd
-res://scripts/tutorial_arrows.gd
-res://scripts/text_box.gd
 res://scripts/story_manager.gd
-res://scripts/scroll.gd

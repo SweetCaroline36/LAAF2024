@@ -107,11 +107,11 @@ shape = SubResource("RectangleShape2D_hvw2h")
 position = Vector2(-1.99998, 89.05)
 
 [node name="Base" type="Sprite2D" parent="."]
-position = Vector2(35, -15)
+position = Vector2(0, -15)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("8_5t3ci")
 region_enabled = true
-region_rect = Rect2(114.767, 14.2204, 1135.45, 1913.94)
+region_rect = Rect2(11.9302, 14.2204, 1093.68, 1860.96)
 
 [node name="Trash" type="Area2D" parent="." groups=["trash"]]
 position = Vector2(695, -8)

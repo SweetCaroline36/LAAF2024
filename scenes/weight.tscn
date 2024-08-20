@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dorshqn1q31xv"]
 
 [ext_resource type="Script" path="res://scripts/weight.gd" id="1_nio03"]
-[ext_resource type="Texture2D" uid="uid://dg2h3cj7g7g7n" path="res://assets/black-kettlebell-clipart.webp" id="2_6yfap"]
+[ext_resource type="Texture2D" uid="uid://dftalsyrbt5gb" path="res://assets/IMG_1506.PNG" id="2_x105g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_meiol"]
 size = Vector2(100, 150)
@@ -11,8 +11,9 @@ z_index = 1
 script = ExtResource("1_nio03")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_6yfap")
-region_enabled = true
+position = Vector2(3, -3)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("2_x105g")
 region_rect = Rect2(3.02009, 84.333, 106.121, 140.554)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

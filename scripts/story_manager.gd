@@ -1,6 +1,7 @@
 extends Node2D
 class_name StoryManager
 
+@export var nom_sound:AudioStreamPlayer2D
 @export var animator : AnimationPlayer
 @export var character : Character
 @export var said_text : TextBox
@@ -22,7 +23,16 @@ func new_person():
 	said_text.generate_random_text()
 	
 	character.character_enter()
+	ScaleManager.generate_weights(1, Vector2(800, 0))
 
 func _on_skip_button_pressed():
 	begin_day(1)
 	
+func reset_world():
+	animator.play("reset_world")
+	
+func _on_heaven_pressed():
+	animator.play("send_to_heaven")
+
+func _on_ammit_pressed():
+	animator.play("send_to_ammit")

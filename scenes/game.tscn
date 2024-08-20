@@ -1,8 +1,10 @@
-[gd_scene load_steps=36 format=3 uid="uid://du1k24kq0h70h"]
+[gd_scene load_steps=42 format=3 uid="uid://du1k24kq0h70h"]
 
 [ext_resource type="Script" path="res://scripts/story_manager.gd" id="1_2ro4k"]
+[ext_resource type="AudioStream" uid="uid://jt7yidj5u0n0" path="res://assets/nom-nom-nom_gPJiWn4.mp3" id="2_at0s3"]
 [ext_resource type="PackedScene" uid="uid://c2qi1c2yvowxx" path="res://scenes/book.tscn" id="2_ia2mo"]
 [ext_resource type="PackedScene" uid="uid://cudn4nx828xfx" path="res://scenes/scroll.tscn" id="3_1jb43"]
+[ext_resource type="AudioStream" uid="uid://tx3qgb6l1tg3" path="res://assets/holy-final.mp3" id="3_fg5it"]
 [ext_resource type="PackedScene" uid="uid://clmxkt3itiuef" path="res://scenes/scale.tscn" id="3_sk0eq"]
 [ext_resource type="PackedScene" uid="uid://dy52ebeochivu" path="res://scenes/character.tscn" id="3_tuqd4"]
 [ext_resource type="Texture2D" uid="uid://csrwp2hcdkflc" path="res://assets/IMG_1491.PNG" id="4_1rbbh"]
@@ -53,6 +55,13 @@ _data = {
 "burst_anim": SubResource("Animation_ebbkn")
 }
 
+[sub_resource type="Theme" id="Theme_v1ib0"]
+Button/colors/font_disabled_color = Color(0.87451, 0.87451, 0.87451, 1)
+Button/colors/icon_disabled_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ilkip"]
+texture = ExtResource("4_1rbbh")
+
 [sub_resource type="Animation" id="Animation_jaf00"]
 length = 0.001
 tracks/0/type = "value"
@@ -70,7 +79,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Character/Button:position")
+tracks/1/path = NodePath("Character/ScrollButton:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -82,7 +91,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Character/Button:size")
+tracks/2/path = NodePath("Character/ScrollButton:size")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -94,7 +103,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Character/Button:scale")
+tracks/3/path = NodePath("Character/ScrollButton:scale")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -106,7 +115,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Character/Button:self_modulate")
+tracks/4/path = NodePath("Character/ScrollButton:self_modulate")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -125,7 +134,7 @@ tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0.2, 0.2)]
+"values": [Vector2(1e-05, 1e-05)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -245,7 +254,7 @@ tracks/15/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 1)]
+"values": [Color(1, 1, 1, 0)]
 }
 tracks/16/type = "value"
 tracks/16/imported = false
@@ -274,7 +283,7 @@ tracks/17/keys = {
 tracks/18/type = "value"
 tracks/18/imported = false
 tracks/18/enabled = true
-tracks/18/path = NodePath("Character/Button:visible")
+tracks/18/path = NodePath("Character/ScrollButton:visible")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/keys = {
@@ -286,19 +295,19 @@ tracks/18/keys = {
 tracks/19/type = "value"
 tracks/19/imported = false
 tracks/19/enabled = true
-tracks/19/path = NodePath("Character/Button:disabled")
+tracks/19/path = NodePath("Character/Visual/Burst:visible")
 tracks/19/interp = 1
 tracks/19/loop_wrap = true
 tracks/19/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 tracks/20/type = "value"
 tracks/20/imported = false
 tracks/20/enabled = true
-tracks/20/path = NodePath("Character/Visual/Burst:visible")
+tracks/20/path = NodePath("Scroll:visible")
 tracks/20/interp = 1
 tracks/20/loop_wrap = true
 tracks/20/keys = {
@@ -310,38 +319,110 @@ tracks/20/keys = {
 tracks/21/type = "value"
 tracks/21/imported = false
 tracks/21/enabled = true
-tracks/21/path = NodePath("CanvasLayer/TextBox/PanelContainer/MarginContainer2/Button:visible")
+tracks/21/path = NodePath("CanvasLayer/TextBox/PanelContainer:size")
 tracks/21/interp = 1
 tracks/21/loop_wrap = true
 tracks/21/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
+"update": 0,
+"values": [Vector2(700, 600)]
 }
 tracks/22/type = "value"
 tracks/22/imported = false
 tracks/22/enabled = true
-tracks/22/path = NodePath("CanvasLayer/TextBox/PanelContainer/MarginContainer2/Button:disabled")
+tracks/22/path = NodePath("CanvasLayer/SkipTut:visible")
 tracks/22/interp = 1
 tracks/22/loop_wrap = true
 tracks/22/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [true]
 }
 tracks/23/type = "value"
 tracks/23/imported = false
 tracks/23/enabled = true
-tracks/23/path = NodePath("Scroll:visible")
+tracks/23/path = NodePath("CanvasLayer/TextBox/PanelContainer/MarginContainer/Arrow:visible")
 tracks/23/interp = 1
 tracks/23/loop_wrap = true
 tracks/23/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
+"values": [true]
+}
+tracks/24/type = "value"
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/path = NodePath("CanvasLayer/TextBox/PanelContainer/MarginContainer2/Button:disabled")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
 "values": [false]
+}
+tracks/25/type = "value"
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/path = NodePath("CanvasLayer/TextBox/PanelContainer/MarginContainer2/Button:visible")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/26/type = "value"
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/path = NodePath("CanvasLayer/TextBox:position")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(452, 40)]
+}
+tracks/27/type = "value"
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/path = NodePath("CanvasLayer/TextBox/PanelContainer:position")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(180, 0)]
+}
+tracks/28/type = "value"
+tracks/28/imported = false
+tracks/28/enabled = true
+tracks/28/path = NodePath("Character:rotation")
+tracks/28/interp = 1
+tracks/28/loop_wrap = true
+tracks/28/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/29/type = "value"
+tracks/29/imported = false
+tracks/29/enabled = true
+tracks/29/path = NodePath("Character:z_index")
+tracks/29/interp = 1
+tracks/29/loop_wrap = true
+tracks/29/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [-3]
 }
 
 [sub_resource type="Animation" id="Animation_8apaj"]
@@ -708,7 +789,7 @@ resource_name = "enter_scroll"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Character/Button:visible")
+tracks/0/path = NodePath("Character/ScrollButton:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -734,7 +815,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Character/Button:disabled")
+tracks/2/path = NodePath("Character/Visual/Burst:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -746,7 +827,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Character/Visual/Burst:visible")
+tracks/3/path = NodePath("Character/ScrollButton:disabled")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -855,137 +936,9 @@ tracks/2/keys = {
 }]
 }
 
-[sub_resource type="Animation" id="Animation_xd46i"]
-resource_name = "scroll_trigger"
-length = 3.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Character/Button:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(190, -1366.67), Vector2(-640, 30)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Character/Button:size")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(2056, 2740), Vector2(2056, 2740)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Character/Button:scale")
-tracks/2/interp = 2
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0.38, 0.38), Vector2(1, 1)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Character/Button:self_modulate")
-tracks/3/interp = 2
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Scroll:visible")
-tracks/4/interp = 2
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/5/type = "method"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Scroll")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(1.2),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"play_scroll_anim"
-}]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Scroll:scale")
-tracks/6/interp = 2
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0, 1.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1e-05, 1e-05), Vector2(0.2, 0.2)]
-}
-tracks/7/type = "method"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("Character")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"switch_char_sprite"
-}]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("Character/Visual/Burst:self_modulate")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0, 0.7),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 0.713726, 0.662745), Color(1, 1, 0.713726, 0)]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("Character/Visual/Burst:visible")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-
 [sub_resource type="Animation" id="Animation_t2qv3"]
 resource_name = "reset_world"
-length = 4.0
+length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -1025,7 +978,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Character/Button:visible")
+tracks/3/path = NodePath("Character/ScrollButton:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -1177,7 +1130,7 @@ tracks/15/loop_wrap = true
 tracks/15/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
+"update": 2,
 "values": [Vector2(-1300, -37)]
 }
 tracks/16/type = "method"
@@ -1187,7 +1140,7 @@ tracks/16/path = NodePath("StoryManager")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/keys = {
-"times": PackedFloat32Array(4),
+"times": PackedFloat32Array(1.9),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
@@ -1218,6 +1171,354 @@ tracks/18/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
 }
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("Character/ScrollButton:disabled")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 2,
+"values": [false]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("CanvasLayer/TextBox/PanelContainer:size")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(470, 600)]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("CanvasLayer/SkipTut:visible")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("CanvasLayer/TextBox/PanelContainer/MarginContainer/Arrow:visible")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/23/type = "value"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("CanvasLayer/TextBox/PanelContainer:position")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(260, 0)]
+}
+tracks/24/type = "value"
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/path = NodePath("Character:rotation")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 2,
+"values": [0.0]
+}
+tracks/25/type = "value"
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/path = NodePath("Character:z_index")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 2,
+"values": [-3]
+}
+tracks/26/type = "value"
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/path = NodePath("Scroll:scale")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05)]
+}
+
+[sub_resource type="Animation" id="Animation_xd46i"]
+resource_name = "scroll_trigger"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Character/ScrollButton:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 2,
+"values": [Vector2(190, -1366.67), Vector2(-640, 30)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Character/ScrollButton:size")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 2,
+"values": [Vector2(2056, 2740), Vector2(2056, 2740)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Character/ScrollButton:scale")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 2,
+"values": [Vector2(0.38, 0.38), Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Character/ScrollButton:self_modulate")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 2,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Scroll:visible")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 2,
+"values": [false, true]
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Scroll")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(1.2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"play_scroll_anim"
+}]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Scroll:scale")
+tracks/6/interp = 2
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 1.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 2,
+"values": [Vector2(1e-05, 1e-05), Vector2(0.2, 0.2)]
+}
+tracks/7/type = "method"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Character")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"switch_char_sprite"
+}]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Character/Visual/Burst:self_modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 0.713726, 0.662745), Color(1, 1, 0.713726, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Character/Visual/Burst:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("CanvasLayer/TextBox:position")
+tracks/10/interp = 2
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0.9, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(452, 40), Vector2(297, 40)]
+}
+
+[sub_resource type="Animation" id="Animation_kc3c6"]
+resource_name = "send_to_heaven"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Character:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 2,
+"values": [Vector2(-686, -37), Vector2(-686, -960)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("StoryManager")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2.9),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"reset_world"
+}]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("StoryManager/HeavenSound")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_jopwx"]
+resource_name = "send_to_ammit"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Character:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 2,
+"values": [Vector2(-686, -37), Vector2(-686, 1100)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Character:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.3, 1.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 2,
+"values": [0.0, 2.83267, 0.0]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("StoryManager/NomSound")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("StoryManager")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"new_person"
+}]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Character:z_index")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dqfb6"]
 _data = {
@@ -1234,7 +1535,9 @@ _data = {
 "enter_weight_right": SubResource("Animation_7728d"),
 "prepare_for_start": SubResource("Animation_ajcfr"),
 "reset_world": SubResource("Animation_t2qv3"),
-"scroll_trigger": SubResource("Animation_xd46i")
+"scroll_trigger": SubResource("Animation_xd46i"),
+"send_to_ammit": SubResource("Animation_jopwx"),
+"send_to_heaven": SubResource("Animation_kc3c6")
 }
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sv8s7"]
@@ -1256,12 +1559,19 @@ corner_radius_bottom_left = 20
 
 [node name="Game" type="Node2D"]
 
-[node name="StoryManager" type="Node2D" parent="." node_paths=PackedStringArray("animator", "character", "said_text", "scroll")]
+[node name="StoryManager" type="Node2D" parent="." node_paths=PackedStringArray("nom_sound", "animator", "character", "said_text", "scroll")]
 script = ExtResource("1_2ro4k")
+nom_sound = NodePath("NomSound")
 animator = NodePath("../AnimationPlayer")
 character = NodePath("../Character")
 said_text = NodePath("../CanvasLayer/TextBox")
 scroll = NodePath("../Scroll")
+
+[node name="NomSound" type="AudioStreamPlayer2D" parent="StoryManager"]
+stream = ExtResource("2_at0s3")
+
+[node name="HeavenSound" type="AudioStreamPlayer2D" parent="StoryManager"]
+stream = ExtResource("3_fg5it")
 
 [node name="Scale" parent="." instance=ExtResource("3_sk0eq")]
 visible = false
@@ -1270,12 +1580,15 @@ position = Vector2(453, -131)
 
 [node name="Scroll" parent="." instance=ExtResource("3_1jb43")]
 visible = false
+self_modulate = Color(1, 1, 1, 0)
 position = Vector2(-560, 351)
+scale = Vector2(1e-05, 1e-05)
 
 [node name="Character" parent="." node_paths=PackedStringArray("animator", "button") instance=ExtResource("3_tuqd4")]
+z_index = -3
 position = Vector2(-1298, -71)
 animator = NodePath("../AnimationPlayer")
-button = NodePath("Button")
+button = NodePath("ScrollButton")
 
 [node name="Visual" type="Sprite2D" parent="Character"]
 texture = ExtResource("4_sewyx")
@@ -1295,14 +1608,15 @@ libraries = {
 }
 speed_scale = 0.4
 
-[node name="Button" type="Button" parent="Character"]
+[node name="ScrollButton" type="Button" parent="Character"]
 visible = false
 offset_left = 190.0
 offset_top = -1366.67
 offset_right = 2246.0
 offset_bottom = 1373.33
 scale = Vector2(0.38, 0.38)
-disabled = true
+theme = SubResource("Theme_v1ib0")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ilkip")
 icon = ExtResource("4_1rbbh")
 flat = true
 
@@ -1339,7 +1653,8 @@ tut_arrow = NodePath("../../TutorialArrows")
 
 [node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/TextBox"]
 layout_mode = 0
-offset_right = 700.0
+offset_left = 180.0
+offset_right = 880.0
 offset_bottom = 600.0
 theme = SubResource("Theme_dr5ks")
 
@@ -1360,7 +1675,6 @@ hello world fhjakh shhsja h
 scroll_active = false
 
 [node name="Arrow" type="TextureRect" parent="CanvasLayer/TextBox/PanelContainer/MarginContainer"]
-visible = false
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 size_flags_horizontal = 8
@@ -1463,6 +1777,8 @@ offset_bottom = 66.0
 text = "Skip Tutorial"
 flat = true
 
-[connection signal="pressed" from="Character/Button" to="Character" method="_on_button_pressed"]
+[connection signal="pressed" from="Character/ScrollButton" to="Character" method="_on_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/TextBox/PanelContainer/MarginContainer2/Button" to="CanvasLayer/TextBox" method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/JudgementButtons/VBoxContainer/Heaven" to="StoryManager" method="_on_heaven_pressed"]
+[connection signal="pressed" from="CanvasLayer/JudgementButtons/VBoxContainer/Ammit" to="StoryManager" method="_on_ammit_pressed"]
 [connection signal="pressed" from="CanvasLayer/SkipTut/SkipButton" to="StoryManager" method="_on_skip_button_pressed"]
