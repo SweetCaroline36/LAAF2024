@@ -40,6 +40,7 @@ var tutorial_text = [
 	["Alright intern, Anubis has a plane to catch. Let's make this quick."], 
 	["You'll be weighing these newly deceased souls against a feather, yada yada yada.", "enter_scale"], 
 	["You know the deal."], 
+	["They'll come in with the riches they were buried with, which will help their case.", "enter_money"],
 	["They're gonna have a scroll on them determining the most significant actions of their lives.", "enter_scroll"], 
 	["You will need to adjust the scale according to their deeds.", "scroll_trigger"], 
 	["Unfortunately, our translator is on maternity leave, so you'll have to use this book.", "enter_book"],

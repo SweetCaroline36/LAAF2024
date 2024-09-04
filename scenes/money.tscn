@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cx0coj3m0bjcq"]
+
+[ext_resource type="Texture2D" uid="uid://bd6s2mflbe4rl" path="res://assets/IMG_1500(1).PNG" id="1_fgpwh"]
+
+[node name="Money" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-6, -13)
+scale = Vector2(0.0978393, 0.090776)
+texture = ExtResource("1_fgpwh")

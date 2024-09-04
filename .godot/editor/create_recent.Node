@@ -1,9 +1,9 @@
+Sprite2D
 CanvasLayer
 Node2D
 Control
 TextureRect
 Label
-Sprite2D
 ParallaxBackground
 Panel
 VBoxContainer
@@ -12,4 +12,3 @@ Marker2D
 AudioStreamPlayer
 PanelContainer
 AudioStreamPlayer2D
-Button
